@@ -125,21 +125,25 @@ p {
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   display:block;
+  max-height: 225px; /* ตั้งขนาดความสูงของเนื้อหาที่ต้องการเลื่อน */
+  overflow-y: scroll; /* เปิดใช้งานการเลื่อน */
 
 }
-.styled-table tbody::-webkit-scrollbar {
+
+.styled-table::-webkit-scrollbar {
   display: none; /* ซ่อน scrollbar สำหรับ WebKit */
 }
 
 /* สำหรับ Firefox */
-.styled-table tbody {
+.styled-table {
   scrollbar-width: none; /* ซ่อน scrollbar ใน Firefox */
 }
 
 /* สำหรับ Internet Explorer และ Edge */
-.styled-table tbody {
+.styled-table {
   -ms-overflow-style: none; /* ซ่อน scrollbar ใน IE และ Edge */
 }
+
 .scroll-message {
   text-align: center;
   font-size: 0.85em;
@@ -150,16 +154,15 @@ span {
   margin-left: 5px;
   margin-right: 5px;
 }
-.styled-table tbody {
-  display: block;
-  overflow-y: scroll; /* Enable vertical scrolling */
-  max-height: 300px; /* Set the maximum height for displaying a single row */
-}
+
 .styled-table thead tr {
   background-color:#4CAF50;
   color: #ffffff;
   text-align: left;
+  position: sticky;
+  top: 0;
 }
+
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
@@ -282,7 +285,7 @@ z-index: -100;
   }
 
   .styled-table thead {
-    display: none; /* Hide table headers */
+    display: none; 
   }
 
   .styled-table tbody {
@@ -300,7 +303,6 @@ z-index: -100;
     padding-left: 40%;
     position: relative;
   }
-
   .styled-table td:before {
     content: attr(data-label); /* Show the corresponding label from the header */
     position: absolute;
