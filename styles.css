@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+    font-family: sans-serif;
+    background: #ffffff;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 15px 15px;
+    align-items: center;
+    background-color: #282828;
+}
+
+.logo{
+    color: #ffffff;
+    font-size: 30px;
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+ul li {
+    display: inline-block;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #777a7e;
+    padding: 8px 12px;
+    border-radius: 7px;
+    transition: all .3s ease;
+}
+
+ul li a:hover,
+ul li a.active {
+    color: #000000;
+    background: greenyellow;
+}
+
+
+
+.page {
+    margin: 20px;
+}
+
+.content.onepage,.content.twopage{
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 25px 25px 25px 25px;
+    overflow: hidden;
+    background:rgba(255, 255, 255, 0.90);
+    position: relative;
+}
+
+.content.threepage{
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 25px 25px 25px 25px;
+    background:rgba(255, 255, 255, 0.90);
+    position: relative;
+    overflow : hidden;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px ;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.styled-table thead tr {
+    background-color:#4CAF50;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    max-width: 100%;
+    
+}
+.styled-table tbody tr:hover ,
+.styled-table tbody tr:nth-child(even):hover {
+    background-color: #aeaeae;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4CAF50;
+}
+
+h2 {
+    color: #000000;
+    font-family: sans-serif;
+}
+label {
+    font-family: sans-serif;
+    display: flex;
+    margin: 30px 0px 5px 0px;
+    font-size: 15px;
+}
+input[type=number]{
+    padding: 14px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=number]:hover {
+    background-color: #eaecea;
+  }
+
+button:hover {
+    background-color: #2a7a2e;
+  }
+
+
+#home-top-video{
+ /* left: 0%;
+  top: 0%;
+  height:100vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+*/
+  position: fixed; 
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto; 
+  z-index: -100;
+}
+
+#outer {
+    width: 100%;
+    display: block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+#home-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#home-top-video:before {
+    content:"";
+    position: absolute;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    z-index:1;
+    background:linear-gradient(to right,rgba(65, 0, 255, 0.4),rgba(255, 0, 232, 0.3));
+}
+
+.bgvid.inner{
+    filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+    -webkit-filter:blur(10px);
+    -ms-filter: blur(10px);
+    -o-filter: blur(10px);
+    filter:blur(10px);
+}
+
+@media screen and (max-width: 680px) {
+    .styled-table {
+      display: block;
+      overflow-y: scroll; /* Enable vertical scrolling */
+      max-height: 200px; /* Set the maximum height for displaying a single row */
+    }
+  
+    .styled-table thead {
+      display: none; /* Hide table headers */
+    }
+  
+    .styled-table tbody {
+      display: block;
+    }
+  
+    .styled-table tbody tr {
+      display: block;
+      width: 100%;
+    }
+  
+    .styled-table td {
+      display: block;
+      text-align: left;
+      padding-left: 25%;
+      position: relative;
+    }
+  
+    .styled-table td:before {
+      content: attr(data-label); /* Show the corresponding label from the header */
+      position: absolute;
+      left: 0;
+      width: 45%;
+      padding-left: 10px;
+      font-weight: bold;
+    }
+
+    td:nth-of-type(1):before { 
+        content: "Created"; 
+        color: green; 
+      }
+      td:nth-of-type(2):before { 
+        content: "Country"; 
+        color: green; 
+      }
+      td:nth-of-type(3):before { 
+        content: "Drone ID"; 
+        color: green; 
+      }
+      td:nth-of-type(4):before { 
+        content: "Drone Name"; 
+        color: green; 
+      }
+      td:nth-of-type(5):before { 
+        content: "Temperature"; 
+        color: green; 
+      }
+    .logo{
+        padding-bottom: 20px;
+    }
+    nav {
+        flex-direction: column;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    
+}
